@@ -1,0 +1,25 @@
+<div class="page-header">
+  <h1>Show About</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Body:</strong></dt>
+  <dd><%= simple_format @about.body %></dd>
+  <dt><strong>Music:</strong></dt>
+  <dd><%= simple_format @about.music %></dd>
+  <dt><strong>Movies:</strong></dt>
+  <dd><%= simple_format @about.movies %></dd>
+  <dt><strong>Traveling:</strong></dt>
+  <dd><%= simple_format @about.traveling %></dd>
+  <dt><strong>Books:</strong></dt>
+  <dd><%= simple_format @about.books %></dd>
+  <dt><strong>Created At:</strong></dt>
+  <dd><%=l @about.created_at %></dd>
+</dl>
+
+<%= link_to "Back", admin_abouts_path, :class => 'btn btn-default'  %>
+<%= link_to "Edit", edit_admin_about_path(@about), :class => 'btn btn-default' %>
+<%= link_to "Delete", admin_about_path(@about),
+              :method => 'delete',
+              :data => { :confirm => 'Are you sure?' },
+              :class => 'btn btn-danger' %>

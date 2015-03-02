@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Resumes</h1>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Title</th>
+      <th>Period</th>
+      <th>Body</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @resumes.each do |resume| %>
+      <tr>
+        <td><%= resume.year %></td>
+        <td><%= resume.title %></td>
+        <td><%= resume.period %></td>
+        <td><%= simple_format resume.body %></td>
+        <td><%=l resume.created_at %></td>
+        <td><%=l resume.updated_at %></td>
+        <td>
+          <%= link_to admin_resume_path(resume), :class => "btn btn-info" do %>
+            R
+          <% end %>
+          <%= link_to edit_admin_resume_path(resume), :class => "btn btn-success" do %>
+            U
+          <% end %>
+          <%= link_to admin_resume_path(resume), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %>
+            D
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="clear:both;"></div>
+
+<%= link_to "New",
+            new_admin_resume_path,
+            :class => 'btn btn-primary' %>

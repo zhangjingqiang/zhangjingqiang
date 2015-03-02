@@ -1,0 +1,47 @@
+<div class="page-header">
+  <h1>Abouts</h1>
+</div>
+<table class="table table-bordered table-striped table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th>Music</th>
+      <th>Movies</th>
+      <th>Traveling</th>
+      <th>Books</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @abouts.each do |about| %>
+      <tr>
+        <td><%= simple_format about.body %></td>
+        <td><%= simple_format about.music %></td>
+        <td><%= simple_format about.movies %></td>
+        <td><%= simple_format about.traveling %></td>
+        <td><%= simple_format about.books %></td>
+        <td><%=l about.created_at %></td>
+        <td><%=l about.updated_at %></td>
+        <td>
+          <%= link_to admin_about_path(about), :class => "btn btn-info" do %>
+            R
+          <% end %>
+          <%= link_to edit_admin_about_path(about), :class => "btn btn-success" do %>
+            U
+          <% end %>
+          <%= link_to admin_about_path(about), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %>
+            D
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="clear:both;"></div>
+
+<%= link_to "New",
+            new_admin_about_path,
+            :class => 'btn btn-primary' %>

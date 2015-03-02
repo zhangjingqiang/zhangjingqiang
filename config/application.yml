@@ -1,0 +1,28 @@
+defaults: &defaults
+  name: Jingqiang Zhang
+  facebook: https://www.facebook.com/zhangjingqiang
+  twitter: https://twitter.com/zhangjingqiang
+  google_plus: https://plus.google.com/+JingqiangZhang
+  linkedin: https://www.linkedin.com/in/zhangjingqiang
+  
+  smtp_address: smtp.mandrillapp.com
+
+development:
+  <<: *defaults
+  host: nitrousbox.com
+  domain: nitrousbox.com
+  subdomain: dominant-auto-25-155632.apne1
+
+test:
+  <<: *defaults
+  host: nitrousbox.com
+  domain: nitrousbox.com
+  subdomain: dominant-auto-25-155632.apne1
+
+production:
+  <<: *defaults
+  <<: *defaults
+  host: herokuapp.com
+  domain: herokuapp.com
+  subdomain: zhangjingqiang
+  

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyText
+  music: MyText
+  movies: MyText
+  traveling: MyText
+  books: MyText
+
+two:
+  body: MyText
+  music: MyText
+  movies: MyText
+  traveling: MyText
+  books: MyText

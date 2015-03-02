@@ -1,0 +1,33 @@
+<section class="section about-me" id="about-me">
+  <div class="container">
+    <h2 class="heading">ABOUT ME</h2>
+    <p><%= simple_format @about.body %></p>
+    <div class="row interest">
+      <div class="col-md-3">
+        <h3 class="sub-heading"><span class="glyphicon glyphicon-headphones"></span> Music</h3>
+        <p><%= simple_format @about.music %></p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="sub-heading"><span class="glyphicon glyphicon-film"></span> Movies</h3>
+        <p><%= simple_format @about.movies %></p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="sub-heading"><span class="glyphicon glyphicon-briefcase"></span> Traveling</h3>
+        <p><%= simple_format @about.traveling %></p>
+      </div>
+      <div class="col-md-3">
+        <h3 class="sub-heading"><span class="glyphicon glyphicon-book"></span> Books</h3>
+        <p><%= simple_format @about.books %></p>
+      </div>
+    </div>
+    <div class="social">
+      <h3 class="sub-heading">Follow me on:</h3>
+      <ul class="social-icons">
+        <li><a href="<%= Settings.facebook %>"><i class="icon icon-facebook"></i></a></li>
+        <li><a href="<%= Settings.twitter %>"><i class="icon icon-twitter"></i></a></li>
+        <li><a href="<%= Settings.google_plus %>"><i class="icon icon-google-plus"></i></a></li>
+        <li><a href="<%= Settings.linkedin %>"><i class="icon icon-linkedin"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</section>

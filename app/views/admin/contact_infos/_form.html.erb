@@ -1,0 +1,8 @@
+<%= f.alert_message "Please fix the errors below." %>
+
+<%= f.text_area :body1 %>
+<%= f.text_area :body2 %>
+<%= f.text_area :body3 %>
+
+<%= f.primary "Submit" %>
+<%= link_to "Cancel", admin_contact_infos_path, :class => 'btn btn-default' %>

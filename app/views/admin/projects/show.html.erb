@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>Show Project</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Body:</strong></dt>
+  <dd><%= simple_format @project.body %></dd>
+  <dt><strong>Name:</strong></dt>
+  <dd><%= @project.name %></dd>
+  <dt><strong>Description:</strong></dt>
+  <dd><%= simple_format @project.description %></dd>
+  <dt><strong>URL:</strong></dt>
+  <dd><%= @project.url %></dd>
+  <dt><strong>Picture:</strong></dt>
+  <dd><%= @project.picture %></dd>
+  <dt><strong>Name1:</strong></dt>
+  <dd><%= @project.name1 %></dd>
+  <dt><strong>Description1:</strong></dt>
+  <dd><%= simple_format @project.description1 %></dd>
+  <dt><strong>URL1:</strong></dt>
+  <dd><%= @project.url1 %></dd>
+  <dt><strong>Picture1:</strong></dt>
+  <dd><%= @project.picture1 %></dd>
+  <dt><strong>Created At:</strong></dt>
+  <dd><%=l @project.created_at %></dd>
+</dl>
+
+<%= link_to "Back", admin_projects_path, :class => 'btn btn-default'  %>
+<%= link_to "Edit", edit_admin_project_path(@project), :class => 'btn btn-default' %>
+<%= link_to "Delete", admin_project_path(@project),
+              :method => 'delete',
+              :data => { :confirm => 'Are you sure?' },
+              :class => 'btn btn-danger' %>

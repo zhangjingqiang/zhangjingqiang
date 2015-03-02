@@ -1,0 +1,9 @@
+<%= f.alert_message "Please fix the errors below." %>
+
+<%= f.text_field :year %>
+<%= f.text_field :title %>
+<%= f.text_field :period %>
+<%= f.text_area :body %>
+
+<%= f.primary "Submit" %>
+<%= link_to "Cancel", admin_resumes_path, :class => 'btn btn-default' %>

@@ -1,0 +1,10 @@
+<%= f.alert_message "Please fix the errors below." %>
+
+<%= f.text_area :body %>
+<%= f.text_area :music %>
+<%= f.text_area :movies %>
+<%= f.text_area :traveling %>
+<%= f.text_area :books %>
+
+<%= f.primary "Submit" %>
+<%= link_to "Cancel", admin_abouts_path, :class => 'btn btn-default' %>

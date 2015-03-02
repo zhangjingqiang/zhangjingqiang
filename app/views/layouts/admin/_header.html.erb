@@ -1,0 +1,45 @@
+<nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="<%= admin_path %>">Dashboard</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li<%= ' class=active' if params[:controller] == 'admin/heros' %>>
+          <%= link_to "Heros", admin_heros_path %>
+        </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/abouts' %>>
+          <%= link_to "Abouts", admin_abouts_path %>
+        </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/resumes' %>>
+          <%= link_to "Resumes", admin_resumes_path %>
+        </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/projects' %>>
+          <%= link_to "Projects", admin_projects_path %>
+        </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/contact_infos' %>>
+          <%= link_to "Contact Infos", admin_contact_infos_path %>
+        </li>
+        <li<%= ' class=active' if params[:controller] == 'admin/contacts' %>>
+          <%= link_to "Contacts", admin_contacts_path %>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to 'View Site', root_path, :target=>'_blank' %>
+        </li>
+        <li>
+          <%= link_to destroy_admin_session_path, :method=>'delete' do %>
+            Logout
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
