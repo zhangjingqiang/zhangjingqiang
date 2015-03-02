@@ -1,23 +1,23 @@
 <section class="section about-me" id="about-me">
   <div class="container">
     <h2 class="heading">ABOUT ME</h2>
-    <p><%= simple_format @about.body %></p>
+    <p><%= simple_format @about.try(:body) %></p>
     <div class="row interest">
       <div class="col-md-3">
         <h3 class="sub-heading"><span class="glyphicon glyphicon-headphones"></span> Music</h3>
-        <p><%= simple_format @about.music %></p>
+        <p><%= simple_format @about.try(:music) %></p>
       </div>
       <div class="col-md-3">
         <h3 class="sub-heading"><span class="glyphicon glyphicon-film"></span> Movies</h3>
-        <p><%= simple_format @about.movies %></p>
+        <p><%= simple_format @about.try(:movies) %></p>
       </div>
       <div class="col-md-3">
         <h3 class="sub-heading"><span class="glyphicon glyphicon-briefcase"></span> Traveling</h3>
-        <p><%= simple_format @about.traveling %></p>
+        <p><%= simple_format @about.try(:traveling) %></p>
       </div>
       <div class="col-md-3">
         <h3 class="sub-heading"><span class="glyphicon glyphicon-book"></span> Books</h3>
-        <p><%= simple_format @about.books %></p>
+        <p><%= simple_format @about.try(:books) %></p>
       </div>
     </div>
     <div class="social">

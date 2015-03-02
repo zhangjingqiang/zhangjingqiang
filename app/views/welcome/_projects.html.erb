@@ -1,29 +1,29 @@
 <section class="section projects" id="projects">
   <div class="container">
     <h2 class="heading">PROJECTS</h2>
-    <p><%= simple_format @project.body %></p>
+    <p><%= simple_format @project.try(:body) %></p>
     <div class="row project-list">
       <ul class="project-grid project-effect-shrink">
         <li class="col-md-6">
           <figure>
-            <img src="assets/img/projects/<%= @project.picture %>" alt="Big Thing Landing Page"/>
+            <img src="assets/img/projects/<%= @project.try(:picture) %>" alt="Big Thing Landing Page"/>
             <figcaption>
               <div class="project-item-info">
-                <h3 class="sub-heading"><%= @project.name %></h3>
-                <p><%= @project.description %></p>
-                <a href="<%= @project.url %>" class="btn btn-default">View Details</a>
+                <h3 class="sub-heading"><%= @project.try(:name) %></h3>
+                <p><%= @project.try(:description) %></p>
+                <a href="<%= @project.try(:url) %>" class="btn btn-default">View Details</a>
               </div>
             </figcaption>
           </figure>
         </li>
         <li class="col-md-6">
           <figure>
-            <img src="assets/img/projects/<%= @project.picture1 %>" alt="Tiick Tock Coming Soon Page"/>
+            <img src="assets/img/projects/<%= @project.try(:picture1) %>" alt="Tiick Tock Coming Soon Page"/>
             <figcaption>
               <div class="project-item-info">
-                <h3 class="sub-heading"><%= @project.name1 %></h3>
-                <p><%= @project.description1 %></p>
-                <a href="<%= @project.url1 %>" class="btn btn-default">View Details</a>
+                <h3 class="sub-heading"><%= @project.try(:name1) %></h3>
+                <p><%= @project.try(:description1) %></p>
+                <a href="<%= @project.try(:url1) %>" class="btn btn-default">View Details</a>
               </div>
             </figcaption>
           </figure>
