@@ -21,7 +21,6 @@ test:
 
 production:
   <<: *defaults
-  <<: *defaults
   host: herokuapp.com
   domain: herokuapp.com
   subdomain: zhangjingqiang
