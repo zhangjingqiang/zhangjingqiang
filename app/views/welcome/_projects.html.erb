@@ -1,7 +1,7 @@
 <section class="section projects" id="projects">
   <div class="container">
     <h2 class="heading">PROJECTS</h2>
-    <p><%= simple_format @project.try(:body) %></p>
+    <p><%= auto_link(simple_format(@project.try(:body))) %></p>
     <div class="row project-list">
       <ul class="project-grid project-effect-shrink">
         <li class="col-md-6">
@@ -10,7 +10,7 @@
             <figcaption>
               <div class="project-item-info">
                 <h3 class="sub-heading"><%= @project.try(:name) %></h3>
-                <p><%= @project.try(:description) %></p>
+                <p><%= auto_link(simple_format(@project.try(:description))) %></p>
                 <a href="<%= @project.try(:url) %>" class="btn btn-default">View Details</a>
               </div>
             </figcaption>
@@ -22,7 +22,7 @@
             <figcaption>
               <div class="project-item-info">
                 <h3 class="sub-heading"><%= @project.try(:name1) %></h3>
-                <p><%= @project.try(:description1) %></p>
+                <p><%= auto_link(simple_format(@project.try(:description1))) %></p>
                 <a href="<%= @project.try(:url1) %>" class="btn btn-default">View Details</a>
               </div>
             </figcaption>

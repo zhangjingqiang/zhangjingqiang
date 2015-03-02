@@ -1,7 +1,7 @@
 <section class="section contacts" id="contacts">
   <div class="container">
     <h2 class="heading">CONTACTS</h2>
-    <p><%= simple_format @contact_info.try(:body1) %></p>
+    <p><%= auto_link(simple_format(@contact_info.try(:body1))) %></p>
     <div class="row google-map">
       <div class="map-canvas"></div>
     </div>
@@ -26,9 +26,9 @@
       </div>
 
       <div class="col-md-6">
-        <p><%= simple_format @contact_info.try(:body2) %></p>
+        <p><%= auto_link(simple_format(@contact_info.try(:body2))) %></p>
         <div class="address-lines">
-          <%= simple_format @contact_info.try(:body3) %>
+          <%= auto_link(simple_format(@contact_info.try(:body3))) %>
         </div>
       </div>
     </div>

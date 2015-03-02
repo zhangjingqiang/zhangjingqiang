@@ -8,7 +8,7 @@
           <li class="event">
             <h3 class="heading"><%= resume.title %></h3>
             <span class="month"><i class="icon icon-calendar"></i><%= resume.period %></span>
-            <p><%= simple_format resume.body %></p>
+            <p><%= auto_link(simple_format(resume.body)) %></p>
           </li>
         <% end %>
       <% end %>
