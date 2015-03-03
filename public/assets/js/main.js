@@ -64,7 +64,7 @@
 			}
 
 			$btn.addClass('loading');
-			//$btn.attr('disabled', 'disabled');
+			$btn.attr('disabled', 'disabled');
 
 			$.post('/contact', $(this).serialize(), function(data){
 				
@@ -80,7 +80,7 @@
 				}
 
 				$btn.removeClass('loading');
-				//$btn.removeAttr('disabled');
+				$btn.removeAttr('disabled');
 
 			})
 			.fail(function() { console.log('AJAX Error'); });
