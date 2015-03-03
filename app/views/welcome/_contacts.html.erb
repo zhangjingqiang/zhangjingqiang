@@ -8,18 +8,13 @@
     <div class="row contact-address">
       <div class="col-md-6">
         <div class="contact-form margin-bottom">
-          <% if flash[:notice] %>
-            <div class="alert">
-              <a class="close" data-dismiss="alert">×</a>
-              <%= flash[:notice] %>
-            </div>
-          <% end %>
-          <%= form_for @contact, as: @contact, url: contact_path(@contact), method: :post do |f| %>
+          <div class="alert"></div>
+          <%= form_for @contact, as: @contact, url: contact_path(@contact), html: { id: 'new_contact' }, method: :post, remote: true do |f| %>
             <%= f.text_field :name, :placeholder => "your name*", :id => "name", :required => "required", :"data-val" => "true", :"data-placement" => "bottom" %>
             <%= f.email_field :email, :placeholder => "email address*", :id => "email", :required => "required", :"data-rule-email" => "true", :"data-val" => "true", :"data-placement" => "bottom" %>
             <%= f.text_field :subject, :placeholder => "please provide the subject", :id => "subject" %>
             <%= f.text_area :message, :placeholder => "your message here*", :id => "subject", :required => "required", :"data-val" => "true", :"data-placement" => "bottom" %>
-            <%= f.submit "Submit", :class => "btn btn-primary btn-lg", :id => "submit-button" %>
+            <%= f.submit "Submit", :class => "btn btn-primary btn-lg", :id => "submit-button", :"data-disable-with" => "Submitting..." %>
             <%= f.hidden_field "msg-submitted", :id => "msg-submitted", :value => "true" %>
           <% end %>
         </div>

@@ -1,4 +1,3 @@
-
 (function($) {
 
 	$(document).ready( function() {
@@ -65,9 +64,9 @@
 			}
 
 			$btn.addClass('loading');
-			$btn.attr('disabled', 'disabled');
+			//$btn.attr('disabled', 'disabled');
 
-			$.post('contact.php', $(this).serialize(), function(data){
+			$.post('/contact', $(this).serialize(), function(data){
 				
 				$message = data.message;
 				
@@ -81,7 +80,7 @@
 				}
 
 				$btn.removeClass('loading');
-				$btn.removeAttr('disabled');
+				//$btn.removeAttr('disabled');
 
 			})
 			.fail(function() { console.log('AJAX Error'); });

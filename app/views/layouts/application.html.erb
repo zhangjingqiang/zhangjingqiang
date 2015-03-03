@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title><%= Settings.name %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <%= render 'layouts/head' %>
-</head>
-<body data-spy="scroll" data-target="#main-nav">
-  <!-- WRAPPER -->
-	<div class="wrapper">
-		<!-- main navigation -->
-    <%= render 'layouts/navigation' %>
-    <!-- end main navigation -->
-    
-    <%= yield %>    
-    
-    <!-- footer -->
-    <%= render 'layouts/footer' %>
-    <!-- end footer -->
-    
-  </div>
-	<!-- END WRAPPER -->
+  <head>
+    <title><%= Settings.name %></title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'layouts/head' %>
+  </head>
+  <body data-spy="scroll" data-target="#main-nav">
+    <!-- WRAPPER -->
+    <div class="wrapper">
+      <!-- main navigation -->
+      <%= render 'layouts/navigation' %>
+      <!-- end main navigation -->
 
-  <!-- Javascript -->
-  <%= render 'layouts/javascripts' %>  
-  
-  <!-- Google Analytics -->
-  <%= render 'layouts/google_analytics' %>  
-</body>
+      <%= yield %>    
+
+      <!-- footer -->
+      <%= render 'layouts/footer' %>
+      <!-- end footer -->
+
+    </div>
+    <!-- END WRAPPER -->
+
+    <!-- Javascript -->
+    <%= render 'layouts/javascripts' %>  
+
+    <!-- Google Analytics -->
+    <%= render 'layouts/google_analytics' %>  
+  </body>
 </html>
