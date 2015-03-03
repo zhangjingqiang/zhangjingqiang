@@ -4,7 +4,7 @@
     <ul class="timeline">
       <% @resumes.each do |resume_year| %>
         <li class="year"><%= resume_year.year %></li>
-        <% Resume.where("year=?",resume_year.year).each do |resume| %>
+        <% Resume.where("year=?",resume_year.year).order("period DESC").each do |resume| %>
           <li class="event">
             <h3 class="heading"><%= resume.title %></h3>
             <span class="month"><i class="icon icon-calendar"></i><%= resume.period %></span>
