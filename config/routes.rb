@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :heros
     resources :abouts
+    resources :skills
     resources :resumes
     resources :projects
     resources :contact_infos

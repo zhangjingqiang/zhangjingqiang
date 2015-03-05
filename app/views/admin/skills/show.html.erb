@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Show Skill</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong>Name:</strong></dt>
+  <dd><%= @skill.name %></dd>
+  <dt><strong>Body:</strong></dt>
+  <dd><%= @skill.level %></dd>
+  <dt><strong>Created At:</strong></dt>
+  <dd><%=l @skill.created_at %></dd>
+</dl>
+
+<%= link_to "Back", admin_skills_path, :class => 'btn btn-default'  %>
+<%= link_to "Edit", edit_admin_skill_path(@skill), :class => 'btn btn-default' %>
+<%= link_to "Delete", admin_skill_path(@skill),
+              :method => 'delete',
+              :data => { :confirm => 'Are you sure?' },
+              :class => 'btn btn-danger' %>

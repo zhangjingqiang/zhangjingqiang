@@ -9,6 +9,23 @@
 		$('#main-nav').localScroll(1000);
 		$('#header').localScroll(1000);
 
+    /*-----------------------------------/
+		/* SKILLS
+		/*----------------------------------*/
+
+		var chart = $('.pie-chart');
+
+		if($('.pie-chart').length > 0) {
+			chart.easyPieChart({
+				size: 180,
+				barColor: '#cf5037',
+				trackColor: '#545454',
+				scaleColor: false,
+				lineWidth: 3,
+				lineCap: "square",
+				animate: 2000
+			});
+		}
 
 		// google maps 
 		if( $('.map-canvas').length > 0) {
@@ -40,52 +57,50 @@
 		});
 
 		// ajax contact form
-		$('.contact-form form').submit( function(e) {
-			
-			e.preventDefault();
+		if($('#contact-form').length > 0) {
+			$('#contact-form').parsley();
 
-			$theForm = $(this);
-			$btn = $(this).find('#submit-button');
-			$alert = $(this).parent().find('.alert');			
+			$('#contact-form').submit( function(e) {
 
-			// just to check if validation supported without response, such as safari 5.1. Removing JS error on chrome
-			if( !Modernizr.input.autocomplete ) {
-				
-				$theForm.validate({
+				e.preventDefault();
 
-					messages: {
-						email: { required: "Email is required", email: "Please enter a valid email address"}
+				$theForm = $(this);
+				$btn = $(this).find('#submit-button');
+				$btnText = $btn.text();
+				$(this).parent().append('<div class="alert"></div>');
+				$alert = $(this).parent().find('.alert');
+
+				$btn.find('.loading-icon').addClass('fa-spinner fa-spin ');
+				$btn.prop('disabled', true).find('span').text("Sending...");
+
+				$url = "/contact";
+
+				$attr = $(this).attr('action');
+				if (typeof $attr !== typeof undefined && $attr !== false) {
+					if($(this).attr('action') != '') $url = $(this).attr('action');
+				}
+
+				$.post($url, $(this).serialize(), function(data){
+					
+					$message = data.message;
+					
+					if( data.result == true ){
+						$theForm.slideUp('medium', function() {
+							$alert.removeClass('alert-danger');
+							$alert.addClass('alert-success').html($message).slideDown('medium');
+						});
+					}else {
+						$alert.addClass('alert-danger').html($message).slideDown('medium');
 					}
-				});	
 
-				if( !$theForm.valid() ) {
-					return;
-				}
-			}
+					$btn.find('.loading-icon').removeClass('fa-spinner fa-spin ');
+					$btn.prop('disabled', false).find('span').text($btnText);
 
-			$btn.addClass('loading');
-			$btn.attr('disabled', 'disabled');
+				})
+				.fail(function() { console.log('AJAX Error'); });
 
-			$.post('/contact', $(this).serialize(), function(data){
-				
-				$message = data.message;
-				
-				if( data.result == true ){
-					$theForm.slideUp('medium', function() {
-						$alert.removeClass('alert-danger');
-						$alert.addClass('alert-success').html($message).slideDown('medium');	
-					});				
-				}else {
-					$alert.addClass('alert-danger').html($message).slideDown('medium');	
-				}
-
-				$btn.removeClass('loading');
-				$btn.removeAttr('disabled');
-
-			})
-			.fail(function() { console.log('AJAX Error'); });
-
-		});
+			});
+		}
 
 	});
 

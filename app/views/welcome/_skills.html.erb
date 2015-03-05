@@ -1,0 +1,17 @@
+<section class="section skills" id="skills">
+  <div class="container">
+    <h2 class="heading sr-only">SKILLS</h2>
+    <div class="row">
+      <% @skills.each do |skill| %>
+      <div class="col-md-4">
+        <div class="skill-chart">
+          <div class="pie-chart" id="chart1" data-percent="92">
+            <span class="percent"><%= skill.level %></span>
+          </div>
+          <span class="chart-title"><%= skill.name %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</section>

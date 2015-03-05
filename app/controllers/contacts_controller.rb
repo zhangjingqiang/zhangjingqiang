@@ -11,6 +11,7 @@ class ContactsController < ApplicationController
           :message => 'Successfully created.'
         }
       end
+      redirect_to root_url
     else
       render controller: 'welcome', action: 'index'
     end
