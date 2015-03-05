@@ -5,8 +5,8 @@
       <% @skills.each do |skill| %>
       <div class="col-md-4">
         <div class="skill-chart">
-          <div class="pie-chart" id="chart1" data-percent="92">
-            <span class="percent"><%= skill.level %></span>
+          <div class="pie-chart" id="chart1" data-percent="<%= skill.level %>">
+            <span class="percent"><%= skill.level %>%</span>
           </div>
           <span class="chart-title"><%= skill.name %></span>
         </div>
