@@ -1,15 +1,18 @@
+
 (function($) {
 
 	$(document).ready( function() {
 
-		// init scrollspy
-		$('body').scrollspy({ target: '#main-nav' });
+		/*-----------------------------------/
+		/* NAVIGATION
+		/*----------------------------------*/
 		
-		// init scroll-to effect navigation, adjust the scroll speed in milliseconds			
+		// init scroll-to effect navigation, adjust the scroll speed in milliseconds
 		$('#main-nav').localScroll(1000);
 		$('#header').localScroll(1000);
 
-    /*-----------------------------------/
+
+		/*-----------------------------------/
 		/* SKILLS
 		/*----------------------------------*/
 
@@ -27,11 +30,15 @@
 			});
 		}
 
-		// google maps 
+
+		/*-----------------------------------/
+		/* GOOGLE MAPS
+		/*----------------------------------*/
+
 		if( $('.map-canvas').length > 0) {
 			
 			var geocoder = new google.maps.Geocoder();
-			var address = 'Google Tokyo, Tokyo, Japan';
+			var address = 'Google Tokyo, Japan';
 			var contentString = '<div class="map-detail"><strong>Our Office:</strong><p>' + address + '</p></div>';
 			
 			geocoder.geocode({'address': address }, function(results, status) {
@@ -47,16 +54,13 @@
 					});
 				}else { alert('Google Maps had some trouble finding the address. Status: ' + status); }
 			});
-			
 		}
 
-		// form validation 
-		Modernizr.load({
-			test: Modernizr.input.autocomplete,		
-			nope: ['assets/js/jquery.validate.js', 'assets/js/jquery.validate.bootstrap.js'],
-		});
 
-		// ajax contact form
+		/*-----------------------------------/
+		/* AJAX CONTACT FORM
+		/*----------------------------------*/
+
 		if($('#contact-form').length > 0) {
 			$('#contact-form').parsley();
 

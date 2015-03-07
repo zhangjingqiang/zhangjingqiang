@@ -55,7 +55,6 @@ end
 gem 'devise', '~> 3.4.1'
 gem 'devise-bootstrap-views', '~> 0.0.3'
 # Twitter Bootstrap
-gem 'twitter-bootstrap-rails', '~> 3.2.0'
 gem 'bootstrap_form', '~> 2.2.0'
 # Pagination
 gem 'will_paginate', '~> 3.0.7'
