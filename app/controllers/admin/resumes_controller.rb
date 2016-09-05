@@ -4,7 +4,7 @@ class Admin::ResumesController < ApplicationController
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resumes = Resume.select(:year).distinct
+    @resumes = Resume.all
   end
 
   def show
