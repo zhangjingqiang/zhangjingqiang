@@ -2,9 +2,9 @@ class Admin::ResumesController < ApplicationController
   before_action :authenticate_admin!
   layout 'admin/application'
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
-  
+
   def index
-    @resumes = Resume.all
+    @resumes = Resume.select(:year).distinct
   end
 
   def show
@@ -27,9 +27,9 @@ class Admin::ResumesController < ApplicationController
       else
         format.html { render action: 'new' }
         format.json { render json: @resume.errors, status: :unprocessable_entity }
-      end 
-    end 
-  end 
+      end
+    end
+  end
 
   def update
     respond_to do |format|
@@ -39,8 +39,8 @@ class Admin::ResumesController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @resume.errors, status: :unprocessable_entity }
-      end 
-    end 
+      end
+    end
   end
 
   def destroy
