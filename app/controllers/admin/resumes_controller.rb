@@ -4,7 +4,7 @@ class Admin::ResumesController < ApplicationController
   before_action :set_resume, only: [:show, :edit, :update, :destroy]
 
   def index
-    @resumes = Resume.all
+    @resumes = Resume.order('period DESC')
   end
 
   def show
