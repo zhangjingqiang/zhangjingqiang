@@ -6,7 +6,7 @@
 		/*-----------------------------------/
 		/* NAVIGATION
 		/*----------------------------------*/
-		
+
 		// init scroll-to effect navigation, adjust the scroll speed in milliseconds
 		$('#main-nav').localScroll(1000);
 		$('#header').localScroll(1000);
@@ -36,13 +36,13 @@
 		/*----------------------------------*/
 
 		if( $('.map-canvas').length > 0) {
-			
+
 			var geocoder = new google.maps.Geocoder();
-			var address = 'Google Tokyo, Japan';
+			var address = 'Tokyo';
 			var contentString = '<div class="map-detail"><strong>Our Office:</strong><p>' + address + '</p></div>';
-			
+
 			geocoder.geocode({'address': address }, function(results, status) {
-				if(status == google.maps.GeocoderStatus.OK) { 
+				if(status == google.maps.GeocoderStatus.OK) {
 					var latitude = results[0].geometry.location.lat();
 					var longitude = results[0].geometry.location.lng();
 
@@ -85,9 +85,9 @@
 				}
 
 				$.post($url, $(this).serialize(), function(data){
-					
+
 					$message = data.message;
-					
+
 					if( data.result == true ){
 						$theForm.slideUp('medium', function() {
 							$alert.removeClass('alert-danger');
