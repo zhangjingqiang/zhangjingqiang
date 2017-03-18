@@ -3,20 +3,23 @@ zhangjingqiang
 
 My resume.
 
-# Information
+# Getting Started
 
-- Powered by [Ruby on Rails](http://rubyonrails.org)
+1. Export necessary environment variables:
 
-# Installation
+    $ export EMAIL=[...]
+    $ export ABOUT_ME=[...]
+    $ export MANDRILL_USERNAME=[...]
+    $ export MANDRILL_API_KEY=[...]
 
-```ruby
-export EMAIL=[...]
-export MANDRILL_USERNAME=[...]
-export MANDRILL_API_KEY=[...]
-rake db:migrate
-rails console
-Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
-```
+2. Create and migrate database:
+
+    $ rake db:create db:migrate
+
+3. Create admin account:
+
+    $ rails console
+    $ Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
 
 # License
 
