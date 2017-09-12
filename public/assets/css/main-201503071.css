@@ -1,6 +1,6 @@
-/*	
+/*
 *	############################################################################
-*	
+*
 *	CVilized Resume/CV HTML Template Style
 *	---------------------------------------------------------------------
 *
@@ -8,7 +8,7 @@
 *	Author		The Develovers
 *	Copyright	Copyright 2015 The Develovers
 *	Website: 	https://themeineed.com
-*	
+*
 *	############################################################################
 */
 .timeline, .timeline.v1 {
@@ -30,10 +30,10 @@
   		screwing up your CSS rule if you are not using
   		border-box
   		if that's the case, I have nothing to say to you.
-  
+
   		thanks to https://github.com/jimmyandrade
   	*/
-  /* 
+  /*
   	elements 1,(2),3,(4), etc.
   	elements in brackets inherit these properties, some are overridden below (2n)
   	beginning at 0
@@ -642,7 +642,6 @@ ul.social-icons i:hover {
   -o-background-size: cover;
   -webkit-background-size: cover;
   background-size: cover;
-  background-image: url('../img/project-bg-20150307.png?1425380243');
   background-repeat: no-repeat;
   background-position: center -20em;
 }
