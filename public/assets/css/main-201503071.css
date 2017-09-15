@@ -644,6 +644,7 @@ ul.social-icons i:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center -20em;
+  background-color: #f4debe;
 }
 @media screen and (max-width: 1440px) {
   .projects {
