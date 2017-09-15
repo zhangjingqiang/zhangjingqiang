@@ -38,7 +38,7 @@
 		if( $('.map-canvas').length > 0) {
 
 			var geocoder = new google.maps.Geocoder();
-			var address = 'Tokyo';
+			var address = 'California';
 			var contentString = '<div class="map-detail"><strong>Our Office:</strong><p>' + address + '</p></div>';
 
 			geocoder.geocode({'address': address }, function(results, status) {
