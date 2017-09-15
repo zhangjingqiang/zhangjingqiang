@@ -644,7 +644,7 @@ ul.social-icons i:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center -20em;
-  background-color: #f4debe;
+  background-color: #eed9b8;
 }
 @media screen and (max-width: 1440px) {
   .projects {
@@ -804,7 +804,7 @@ ul.social-icons i:hover {
 /*	Contacts
 /*------------------------------------------------*/
 .contacts {
-  background-color: #eed9b8;
+  background-color: #f4debe;
 }
 .contacts .google-map {
   margin: 40px 0;
