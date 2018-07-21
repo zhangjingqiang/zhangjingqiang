@@ -1,30 +1,30 @@
 zhangjingqiang
 ==============
 
-My resume.
+My online resume.
 
 # Getting Started
 
-1. Export necessary environment variables:
+## Set environment variables
 
-```bash
-    $ export EMAIL=[...]
-    $ export ABOUT_ME=[...]
-    $ export MANDRILL_USERNAME=[...]
-    $ export MANDRILL_API_KEY=[...]
+```
+$ export EMAIL=[...]
+$ export ABOUT_ME=[...]
+$ export MANDRILL_USERNAME=[...]
+$ export MANDRILL_API_KEY=[...]
 ```
 
-2. Create and migrate database:
+## Create and migrate database
 
-```bash
-    $ rake db:create db:migrate
+```
+$ bundle exec rake db:create db:migrate
 ```
 
-3. Create admin account:
+## Create admin account
 
-```bash
-    $ rails console
-    $ Admin.create!({ :email => '...', :password => '...', :password_confirmation => '...' })
+```
+$ rails console
+$ Admin.create!({ email: '...', password: '...', password_confirmation: '...' })
 ```
 
 # License
