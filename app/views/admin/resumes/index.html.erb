@@ -24,13 +24,13 @@
         <td><%=l resume.updated_at %></td>
         <td>
           <%= link_to admin_resume_path(resume), :class => "btn btn-info" do %>
-            R
+            Show
           <% end %>
           <%= link_to edit_admin_resume_path(resume), :class => "btn btn-success" do %>
-            U
+            Edit
           <% end %>
           <%= link_to admin_resume_path(resume), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %>
-            D
+            Delete
           <% end %>
         </td>
       </tr>

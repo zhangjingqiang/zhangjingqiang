@@ -34,13 +34,13 @@
         <td><%=l project.updated_at %></td>
         <td>
           <%= link_to admin_project_path(project), :class => "btn btn-info" do %>
-            R
+            Show
           <% end %>
           <%= link_to edit_admin_project_path(project), :class => "btn btn-success" do %>
-            U
+            Edit
           <% end %>
           <%= link_to admin_project_path(project), method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" do %>
-            D
+            Delete
           <% end %>
         </td>
       </tr>
